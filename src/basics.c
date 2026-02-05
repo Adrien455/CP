@@ -32,7 +32,8 @@ void circumference()
     printf("Enter radius: ");
     scanf("%f", &radius);
 
-    printf("The circumference is: %f\n", 3.14 * radius * radius);
+    printf("The circumference is: %f\n", 3.14 * radius * 2);
+    printf("The area is: %f\n", 3.14 * radius * radius);
 }
 
 void operations()
