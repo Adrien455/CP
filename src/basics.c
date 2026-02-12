@@ -42,42 +42,51 @@ void operations()
 
     int left;
     int right;
-    int res;
-
-    printf("Enter first number: ");
-    scanf("%d", &left);
-
-    printf("Enter second number: ");
-    scanf("%d", &right);
 
     char operator;
 
-    printf("Press any operator between addition, substraction, multiplication and division.\n");
-    scanf(" %c", &operator);
-
-    switch(operator)
+    while(operator != 'q')
     {
-        case '+':
-            printf("%d\n", left + right);
-            break;
+        printf("Enter first number: ");
+        scanf("%d", &left);
 
-        case '-':
-            printf("%d\n", left - right);
-            break;
+        printf("Enter second number: ");
+        scanf("%d", &right);
 
-        case '*':
-            printf("%d\n", left * right);
-            break;
+        printf("Enter operator or press q to quit: \n");
+        scanf(" %c", &operator);
 
-        case '/':
-            if(right == 0)
-            {
-                errx(EXIT_FAILURE, "Cannot divide by zero.\n");
-            }
+        switch(operator)
+        {
+            case '+':
+                printf("%d\n", left + right);
+                break;
 
-            printf("%d\n", left / right);
-            break;
+            case '-':
+                printf("%d\n", left - right);
+                break;
 
-        default: errx(EXIT_FAILURE, "Wrong operator. Please select a valid one.\n");
+            case '*':
+                printf("%d\n", left * right);
+                break;
+
+            case '/':
+                if(right == 0)
+                {
+                    printf("Error: Cannot divide by zero.\n");
+                    break;
+                }
+
+                printf("%d\n", left / right);
+                break;
+
+            case 'q':
+                printf("Exiting\n");
+                break;
+
+            default: 
+                printf("Wrong operator. Please select a valid one.\n");
+                break;            
+        }
     }
 }

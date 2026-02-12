@@ -14,6 +14,18 @@ int facto(int n)
     }
 }
 
+int sum_digits(int n)
+{
+    if(n == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        return n % 10 + sum_digits(n / 10);
+    }
+}
+
 void run_recursive()
 {
     printf("\n\n/// RECURSION ///\n\n");
@@ -22,4 +34,9 @@ void run_recursive()
     {
         printf("!%d = %d\n", i, facto(i));
     }
+
+    int n;
+    printf("Enter a number\n");
+    scanf("%d", &n);
+    printf("Sum of digits: %d\n", sum_digits(n));
 }

@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <err.h>
+
 #include "src/main.h"
 
 int main(int argc, char** argv)
@@ -12,11 +16,7 @@ int main(int argc, char** argv)
     // run_array();
     // run_matrix();
     // run_recursive();
-
-    run_string();
-
-    // run_struct();
-
-
-    return 0;
+    // run_string();
+    run_struct();
+    // run_file();
 }

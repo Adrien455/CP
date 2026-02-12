@@ -31,11 +31,15 @@ void is_amstrong(int n)
 {
     int sum = 0;
     int temp = n;
+    int power = 0;
 
-    char* str = malloc(sizeof(char*));
-    sprintf(str, "%d", n);
-    int power = strlen(str);
-    printf("power: %d\n", power);
+    while(temp > 0)
+    {
+        temp /= 10;
+        power++;
+    }
+
+    temp = n;
 
     while(temp > 0)
     {
@@ -59,8 +63,6 @@ void is_amstrong(int n)
     {
         printf("The number %d is not Amstrong\n", n);
     }
-
-    free(str);
 }
 
 void reverse(int n)
@@ -208,9 +210,9 @@ void run_loop()
     first_n_sum(n);
     is_amstrong(n);
     reverse(n);
-    printf("Fibonnaci sequence of n gave: %d\n", fibonacci(n % 10));
-    print_pattern_right(n);
-    print_pattern_left(n);
+    printf("Fibonnaci sequence of %d gave: %d\n", n % 10, fibonacci(n % 10));
+    print_pattern_right(n % 10);
+    print_pattern_left(n % 10);
 
     printf("\n");
     print_num_pattern();
