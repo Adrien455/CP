@@ -9,6 +9,7 @@ Section: G5
 ## How to Run
 
 > make
+
 > ./main
 
 ## How to Clean
