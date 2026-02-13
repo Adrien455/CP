@@ -8,13 +8,16 @@ Section: G5
 
 ## How to Run
 
-> make
-
-> ./main
+```bash
+make
+./main
+```
 
 ## How to Clean
 
-> make clean
+```bash
+make clean
+```
 
 ## Practicals List
 
