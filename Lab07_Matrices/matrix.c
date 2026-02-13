@@ -4,7 +4,7 @@
 #include <time.h>
 #include <err.h>
 
-#include "main.h"
+#include "../main.h"
 
 int** init_matrix(int rows, int cols)
 {
@@ -81,7 +81,14 @@ void printm(int **m, int rows, int cols)
     {
         for(int j = 0; j < cols; j++)
         {
-            printf("%d ", *(*(m + i) + j));
+            if(*(*(m + i) + j) < 10)
+            {
+                printf("%d  ", *(*(m + i) + j));
+            }
+            else
+            {
+                printf("%d ", *(*(m + i) + j));
+            }
         }
         printf("\n");
     }

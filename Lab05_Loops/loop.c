@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -83,22 +83,6 @@ void reverse(int n)
     printf("n: %d, reverse: %d\n", temp, reverse);
 }
 
-int fibonacci(int n)
-{
-    if(n == 0)
-    {
-        return 0;
-    }
-    else if(n == 1)
-    {
-        return 1;
-    }
-    else
-    {
-        return fibonacci(n - 1) + fibonacci(n -2);
-    }
-}
-
 void print_pattern_right(int n)
 {
     for(int i = 0; i < n; i++)
@@ -138,7 +122,15 @@ void print_num_pattern()
         for(int j = 0; j < 6; j++)
         {
             k += i;
-            printf("%d ", k);
+
+            if(k < 10)
+            {
+                printf("%d  ", k);
+            }
+            else
+            {
+                printf("%d ", k);
+            }
         }
 
         printf("\n");
@@ -210,9 +202,8 @@ void run_loop()
     first_n_sum(n);
     is_amstrong(n);
     reverse(n);
-    printf("Fibonnaci sequence of %d gave: %d\n", n % 10, fibonacci(n % 10));
-    print_pattern_right(n % 10);
-    print_pattern_left(n % 10);
+    print_pattern_right(n % 10 + 1);
+    print_pattern_left(n % 10 + 1);
 
     printf("\n");
     print_num_pattern();

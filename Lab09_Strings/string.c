@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,7 +15,7 @@ void menu()
 
     while(choice != 6)
     {
-        scanf("%d", &choice);
+        scanf(" %d", &choice);
         char *str2 = malloc(100);;
 
         switch(choice)
@@ -74,6 +74,9 @@ void menu()
 
 void contain()
 {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+
     printf("Enter a string\n");
     char *input = malloc(4096);
     fgets(input, 4096, stdin);
@@ -88,9 +91,9 @@ void contain()
     char *current_p = pattern;
     int count = 0;
 
-    while(*current_i != '\0')
+    while(*current_i != '\n')
     {
-        if(*current_p == '\0')
+        if(*current_p == '\n')
         {
             count++;
             current_p = pattern;
@@ -115,12 +118,12 @@ void contain()
         current_i++;
     }
 
-    if(*current_p == '\0')
+    if(*current_p == '\n')
     {
         count++;
     }
         
-    printf("The pattern occured %d times in the given string\n", count);
+    printf("The pattern occured %d time(s) in the given string\n", count);
     free(pattern);
     free(input);
 }

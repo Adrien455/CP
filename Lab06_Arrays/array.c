@@ -2,13 +2,36 @@
 #include <stdlib.h>
 #include <err.h>
 
-#include "main.h"
+#include "../main.h"
 
 int* init(int length)
 {
     int *new_arr = calloc(length, sizeof(int));
     printf("Array of length %d initiated\n\n", length);
     return new_arr;
+}
+
+typedef struct 
+{
+    int* data;
+} Employee;
+
+Employee register_(int ID, int age, int year_of_birth, int salary, int years_of_exp)
+{
+    Employee emp;
+    emp.data = init(5);
+    emp.data[0] = ID;
+    emp.data[1] = age;
+    emp.data[2] = year_of_birth;
+    emp.data[3] = salary;
+    emp.data[4] = years_of_exp; 
+    
+    return emp;
+}
+
+void fire(Employee emp)
+{
+    free(emp.data);
 }
 
 void display(int *arr, int length)
@@ -132,6 +155,15 @@ void sum_array(int *arr, int length)
     printf("Sum of the array is %d\n\n", sum);
 }
 
+void print_emp(Employee emp)
+{
+    printf("ID number: %d\n", emp.data[0]);
+    printf("Age: %d\n", emp.data[1]);
+    printf("Year of birth: %d\n", emp.data[2]);
+    printf("Salary: %d\n", emp.data[3]);
+    printf("Years of experience: %d\n", emp.data[4]);
+}
+
 void run_array()
 {
     printf("\n\n/// ARRAYS ///\n\n");
@@ -159,4 +191,8 @@ void run_array()
     sum_array(arr, length);
 
     free(arr);
+
+    Employee emp = register_(12637, 19, 2006, 1200, 2);
+    print_emp(emp);
+    fire(emp);
 }

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -67,7 +67,7 @@ void run_struct()
     Complex b = complex_num(-2, 5);
     print_complex(b);
 
-    printf("Addition;\n");
+    printf("Addition:\n");
     print_complex(add(a, b));
     
 }

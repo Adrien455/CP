@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 
-#include "main.h"
+#include "../main.h"
 
 int find(char buffer[], int n, char* pattern)
 {
@@ -107,7 +107,10 @@ void replace(char* filename, char* pattern, char *word)
 
 void run_file()
 {
+    printf("\n/// FILE ///\n");
+    printf("The given pattern: 'hello' will be replaced by 'greetings' in stress_text.txt\n");
+
     char* filename = "stress_test.txt";
     replace(filename, "hello", "greetings");
-    replace(filename, "hello", "greetings");    
+    replace(filename, "hello", "greetings");  
 }
